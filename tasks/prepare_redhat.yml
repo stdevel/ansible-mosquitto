@@ -1,0 +1,7 @@
+---
+- name: Enable EPEL
+  yum:
+    name: "{{ epel_packages }}"
+  when:
+    - configure_epel
+    - ansible_distribution_major_version == '7'

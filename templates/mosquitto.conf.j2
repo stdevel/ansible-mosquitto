@@ -1,0 +1,10 @@
+{% if ansible_os_family|lower == "debian" %}
+pid_file /var/run/mosquitto.pid
+
+persistence true
+persistence_location /var/lib/mosquitto/
+
+log_dest file /var/log/mosquitto/mosquitto.log
+{% endif %}
+
+include_dir /etc/mosquitto/conf.d

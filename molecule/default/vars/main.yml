@@ -1,0 +1,11 @@
+---
+# package names
+os_packages:
+  - mosquitto
+# service name
+os_service: mosquitto
+# users and topics
+user_topics:
+  - user: admin
+    password: 23cu53
+    global_readwrite: true

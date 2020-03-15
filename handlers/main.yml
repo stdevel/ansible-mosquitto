@@ -1,0 +1,6 @@
+---
+# handlers file for mosquitto
+- name: Restart mosquitto
+  service:
+    name: "{{ service_name }}"
+    state: restarted

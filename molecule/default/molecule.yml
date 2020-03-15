@@ -1,0 +1,20 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+platforms:
+  - name: centos-7
+    box: centos/7
+  - name: debian-stretch
+    box: debian/stretch64
+  - name: debian-buster
+    box: debian/buster64
+provisioner:
+  name: ansible
+verifier:
+  name: testinfra
+lint: |
+    yamllint .
+    ansible-lint
+    flake8

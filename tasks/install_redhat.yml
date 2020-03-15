@@ -1,0 +1,9 @@
+---
+- name: Install packages
+  yum:
+    name: "{{ os_packages }}"
+- name: Enable and start service
+  service:
+    name: "{{ service_name }}"
+    state: started
+    enabled: true

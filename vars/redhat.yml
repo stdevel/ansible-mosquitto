@@ -1,0 +1,4 @@
+---
+# EPEL packages
+epel_packages:
+  - epel-release

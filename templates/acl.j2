@@ -1,0 +1,20 @@
+{% for user in user_topics %}
+# {{ user.user }}
+user {{ user.user }}
+{% if user.global_read is defined %}
+topic read #
+topic read $SYS/#
+{% elif user.global_write is defined %}
+topic write #
+topic write $SYS/#
+{% elif user.global_readwrite is defined %}
+topic readwrite #
+topic readwrite $SYS/#
+{% endif %}
+{% if (user.topics is defined) and user.topics %}
+{% for topic in user.topics %}
+topic {{ topic.type }} {{ topic.name }}
+{% endfor %}
+{% endif %}
+
+{% endfor %}

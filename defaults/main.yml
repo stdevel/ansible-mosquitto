@@ -1,0 +1,32 @@
+# defines whether to configure EPEL on EL
+configure_epel: true
+
+# defines whether ACLs should be configured
+configure_acl: true
+
+# defines whether anonymous access is allowed
+allow_anonymous: false
+
+# defines users and topics to configure
+user_topics:
+  - user: admin
+    password: 23cu53
+    global_readwrite: true
+# extended example:
+#user_topics:
+#  - user: pinkepank
+#    password: trololo
+#    global_readwrite: true
+#  - user: giertz
+#    password: chad
+#    topics:
+#    global_read: true
+#  - user: bb8
+#    password: bleepbleep
+#    topics:
+#      - name: r2d2/target
+#        type: read
+#      - name: falcon/power
+#        type: write
+#      - name: luke/status
+#        type: readwrite

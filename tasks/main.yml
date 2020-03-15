@@ -1,0 +1,12 @@
+---
+- name: Include variables
+  include_vars: "{{ ansible_os_family|lower }}.yml"
+
+- include_tasks: "prepare_{{ ansible_os_family|lower }}.yml"
+  tags: prepare
+
+- include_tasks: "install_{{ ansible_os_family|lower }}.yml"
+  tags: install
+
+- include_tasks: configure.yml
+  tags: configure

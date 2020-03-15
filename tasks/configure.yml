@@ -1,0 +1,50 @@
+---
+- name: Create configuration file
+  template:
+    src: mosquitto.conf.j2
+    dest: /etc/mosquitto/mosquitto.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart mosquitto
+
+- name: Create configuration folder
+  file:
+    path: /etc/mosquitto/conf.d
+    state: directory
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart mosquitto
+
+- name: Create ACL configuration
+  template:
+    src: acl.conf.j2
+    dest: /etc/mosquitto/conf.d/acl.conf
+    owner: root
+    group: root
+    mode: '0600'
+  notify: Restart mosquitto
+
+- name: Create ACLs
+  template:
+    src: acl.j2
+    dest: /etc/mosquitto/conf.d/acl
+    owner: root
+    group: root
+    mode: '0600'
+  notify: Restart mosquitto
+
+- name: Create user file
+  file:
+    state: touch
+    dest: /etc/mosquitto/pwfile
+    owner: root
+    group: root
+    mode: '0600'
+  changed_when: false
+
+- name: Create users
+  command: mosquitto_passwd -b /etc/mosquitto/pwfile '{{ item.user }}' '{{ item.password }}'
+  loop: "{{ user_topics }}"
+  changed_when: false

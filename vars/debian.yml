@@ -1,0 +1,4 @@
+---
+os_packages:
+  - mosquitto
+  - mosquitto-clients

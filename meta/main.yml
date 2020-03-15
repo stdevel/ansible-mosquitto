@@ -1,0 +1,21 @@
+galaxy_info:
+  author: Christian Stankowic
+  description: Installs and configures the MQTT broker Eclipse mosquitto.
+  issue_tracker_url: https://github.com/stdevel/ansible-mosquitto/issues
+  license: BSD
+
+  min_ansible_version: 2.7
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Debian
+      version:
+        - stretch
+        - buster
+
+  galaxy_tags:
+    - mosquitto
+    - mqtt
+
+dependencies: []
