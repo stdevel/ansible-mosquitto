@@ -2,7 +2,7 @@
 
 # mosquitto
 
-This role installs and configures the MQTT broker [http://mosquitto.org](Eclipse mosquitto).
+This role installs and configures the MQTT broker [Eclipse mosquitto](http://mosquitto.org).
 
 ## Requirements
 
@@ -13,7 +13,7 @@ This system requires an internet connection and a supported Linux distribution:
   - Scientific Linux
   - Oracle Linux
 - Debian
-  - buster
+  - Buster
   - stretch
 
 ## Role Variables
@@ -23,7 +23,7 @@ This system requires an internet connection and a supported Linux distribution:
 | `configure_epel` | `true` | Configures the [EPEL repository](https://fedoraproject.org/wiki/EPEL) on EL7 |
 | `configure_acl` | `true` | Configures ACLs |
 | `allow_anonymous` | `false` | Allows/forbids anonymous access |
-| `user_topics` | `[]` | Configures users and topics (*see also ACLs*) |
+| `user_topics` | `[{user: admin, password: 23cu53, global_readwrite: true}]` | Configures users and topics (*see also ACLs*) |
 
 ### ACLs
 
