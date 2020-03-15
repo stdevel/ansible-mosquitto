@@ -16,6 +16,8 @@ This system requires an internet connection and a supported Linux distribution:
   - Buster
   - stretch
 
+There is no EL8 support as there is currently no installable candidate for mosquitto.
+
 ## Role Variables
 
 | Variable | Default | Description |
